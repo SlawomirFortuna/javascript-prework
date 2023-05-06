@@ -1,5 +1,23 @@
 var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput;
 
+
+var argButtonName, buttonNo_C5_BCyce;
+
+/**
+ * Describe this function...
+ */
+function buttonClicked(argButtonName) {
+  clearMessages();
+  console.log(argButtonName + ' został kliknięty');
+}
+buttonNo_C5_BCyce = document.getElementById('button-test');
+buttonNo_C5_BCyce.addEventListener('click', function(){ buttonClicked('Guzik TEST'); });
+buttonNo_C5_BCyce = document.getElementById('button-kamień');
+buttonNo_C5_BCyce.addEventListener('click', function(){ buttonClicked('Guzik Kamień'); });
+buttonNo_C5_BCyce = document.getElementById('button-papier');
+buttonNo_C5_BCyce.addEventListener('click', function(){ buttonClicked('Guzik Papier'); });
+buttonNo_C5_BCyce = document.getElementById('button-nożyce');
+buttonNo_C5_BCyce.addEventListener('click', function(){ buttonClicked('Guzik Nożyce'); });
 /**
  * Describe this function...
  */
@@ -35,9 +53,8 @@ function displayResult(argPlayerMove, argComputerMove) {
   }
   printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 }
-playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
+playerMove = argButtonName;
 console.log('wybór ruchu gracza to: ' + playerInput);
-playerMove = getMoveName(playerInput);
 console.log('ruch gracza to: ' + playerMove);
 randomNumber = Math.floor(Math.random() * 3 + 1);
 console.log('wylosowana liczba to: ' + randomNumber);
